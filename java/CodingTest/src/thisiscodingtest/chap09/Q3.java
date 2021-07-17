@@ -2,7 +2,7 @@ package thisiscodingtest.chap09;
 
 import java.util.*;
 
-class Node implements Comparable<Node>{
+class QNode implements Comparable<QNode>{
     int index;
     int distance;
 
@@ -14,13 +14,13 @@ class Node implements Comparable<Node>{
         return distance;
     }
 
-    public Node(int index, int distance) {
+    public QNode(int index, int distance) {
         this.index = index;
         this.distance = distance;
     }
 
     @Override
-    public int compareTo(Node o) {
+    public int compareTo(QNode o) {
         return distance < o.distance ? -1 : 1;
     }
 }
@@ -28,7 +28,7 @@ class Node implements Comparable<Node>{
 public class Q3 {
     static int INF = (int) 1e9;
     static int n, m, c;
-    static List<List<Node>> graph = new ArrayList<>();
+    static List<List<QNode>> graph = new ArrayList<>();
     static int[] d;
 
     public static void main(String[] args) {
@@ -47,7 +47,7 @@ public class Q3 {
             int x = sc.nextInt();
             int y = sc.nextInt();
             int z = sc.nextInt();
-            graph.get(x).add(new Node(y, z));
+            graph.get(x).add(new QNode(y, z));
         }
 
         dijkstra(c);
@@ -65,12 +65,12 @@ public class Q3 {
     }
 
     private static void dijkstra(int start) {
-        PriorityQueue<Node> pq = new PriorityQueue<>();
-        pq.offer(new Node(start, 0));
+        PriorityQueue<QNode> pq = new PriorityQueue<>();
+        pq.offer(new QNode(start, 0));
         d[start] = 0;
 
         while (!pq.isEmpty()) {
-            Node cur = pq.poll();
+            QNode cur = pq.poll();
             int dist = cur.getDistance();
             int now = cur.getIndex();
 
@@ -82,7 +82,7 @@ public class Q3 {
                 int cost = dist + graph.get(now).get(i).getDistance();
                 if (cost < d[graph.get(now).get(i).getIndex()]) {
                     d[graph.get(now).get(i).getIndex()] = cost;
-                    pq.offer(new Node(graph.get(now).get(i).getIndex(), cost));
+                    pq.offer(new QNode(graph.get(now).get(i).getIndex(), cost));
                 }
             }
         }
