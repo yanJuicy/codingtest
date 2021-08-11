@@ -27,7 +27,8 @@ def dijkstra(start):
             if cost < dist[i[0]]:
                 dist[i[0]] = cost
                 heapq.heappush(q, (cost, i[0]))
-                parent[i[0]] = now
+                parent[i[0]] = now 
+
         
 dijkstra(start)
 print(dist[end])
