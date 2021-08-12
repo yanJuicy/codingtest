@@ -1,4 +1,4 @@
-package chap15;
+package thisiscodingtest.chap15;
 
 import java.util.Scanner;
 
