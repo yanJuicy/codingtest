@@ -4,31 +4,43 @@ import java.util.Scanner;
 
 public class p_15649 {
 
-    static Scanner sc = new Scanner(System.in);
-    static StringBuilder sb = new StringBuilder();
-    static boolean[] nums = new boolean[8];
+    static int N,M;
+    static int[] selected;
+    static boolean[] isUsed;
+    static StringBuilder sb;
 
-    static void solve(int n, int m, int step) {
-        if (step == m) {
-            for (int i=0; i<n; i++)
-                if (nums[i])
-                    sb.append(i+1).append(" ");
-            sb.append('\n');
+    static void input() {
+        Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        M = sc.nextInt();
+        selected = new int[N + 1];
+        isUsed = new boolean[N + 1];
+        sb = new StringBuilder();
+    }
+
+    static void solve(int k) {
+        if (k == M + 1) {
+            for (int i=1; i<=M; i++) {
+                sb.append(selected[i]).append(" ");
+            }
+            sb.append("\n");
         } else {
-            for (int i=step; i<n; i++) {
-                nums[i] = true;
-                solve(n, m, step + 1);
-                nums[i] = false;
+            for (int cand = 1; cand <= N; cand ++) {
+                if (isUsed[cand] == true) continue;
+                selected[k] = cand;
+                isUsed[cand] = true;
+
+                solve(k + 1);
+
+                selected[k] = 0;
+                isUsed[cand] = false;
             }
         }
     }
 
     public static void main(String[] args) {
-        int n = sc.nextInt();
-        int m = sc.nextInt();
-
-        solve(n, m, 0);
+        input();
+        solve(1);
         System.out.println(sb.toString());
-
     }
 }
