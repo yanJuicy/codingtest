@@ -1,8 +1,8 @@
-package baekjoon;
+package baekjoon._15649;
 
 import java.util.Scanner;
 
-public class p_15649 {
+public class Main {
 
     static int N,M;
     static int[] selected;
