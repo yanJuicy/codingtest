@@ -23,6 +23,7 @@ public class Main {
             else curCnt = 1;
             if (modeCnt < curCnt) {
                 mode = nums[i];
+                modeCnt = curCnt;
             }
         }
 
