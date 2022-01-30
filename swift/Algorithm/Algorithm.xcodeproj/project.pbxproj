@@ -6,10 +6,6 @@
 	objectVersion = 50;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		D68ABAB227A648CA006253B4 /* 약수 구하기.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68ABAB127A648CA006253B4 /* 약수 구하기.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		D65EB0EE2794D82200BB0C36 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -30,6 +26,7 @@
 		D68ABAB127A648CA006253B4 /* 약수 구하기.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "약수 구하기.swift"; sourceTree = "<group>"; };
 		D6AFC74D27A628F100D56FB9 /* Input by Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Input by Space.swift"; sourceTree = "<group>"; };
 		D6AFC75227A6370200D56FB9 /* multi input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "multi input.swift"; sourceTree = "<group>"; };
+		D6CD805427A65AE5007D2432 /* 3과 5의 배수.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "3과 5의 배수.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +81,7 @@
 			children = (
 				D68ABAAC27A64474006253B4 /* 비트연산 기본 2.swift */,
 				D68ABAB127A648CA006253B4 /* 약수 구하기.swift */,
+				D6CD805427A65AE5007D2432 /* 3과 5의 배수.swift */,
 			);
 			name = "구름LEVEL";
 			path = "../구름LEVEL";
@@ -147,7 +145,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D68ABAB227A648CA006253B4 /* 약수 구하기.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
