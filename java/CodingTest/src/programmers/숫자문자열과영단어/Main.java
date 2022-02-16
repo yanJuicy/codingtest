@@ -1,6 +1,6 @@
-package programmers;
+package programmers.숫자문자열과영단어;
 
-public class 숫자문자열과영단어 {
+public class Main {
 
     public int solution(String s) {
         String[] strs = {"zero", "one", "two", "three", "four",
@@ -18,6 +18,6 @@ public class 숫자문자열과영단어 {
 
 
     public static void main(String[] args) {
-        System.out.println((new 숫자문자열과영단어().solution("one4seveneight")));
+        System.out.println((new Main().solution("one4seveneight")));
     }
 }

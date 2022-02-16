@@ -1,6 +1,6 @@
-package programmers;
+package programmers.소수만들기;
 
-public class 소수만들기 {
+public class Main {
 
     static int result = 0;
     public int solution(int[] nums) {
@@ -46,6 +46,6 @@ public class 소수만들기 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new 소수만들기().solution(new int[] {1, 2, 3, 4}));
+        System.out.println(new Main().solution(new int[] {1, 2, 3, 4}));
     }
 }
