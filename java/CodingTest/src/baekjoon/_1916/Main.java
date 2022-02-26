@@ -1,6 +1,10 @@
 package baekjoon._1916;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Scanner;
 
 public class Main {
 
@@ -51,10 +55,10 @@ public class Main {
         Arrays.fill(dist, INF);
 
         graph = new ArrayList<>();
-        for (int i=0; i<=n; i++) {
+        for (int i = 0; i <= n; i++) {
             graph.add(new ArrayList<>());
         }
-        for (int i=0; i<m; i++) {
+        for (int i = 0; i < m; i++) {
             int a, b, c;
             a = sc.nextInt();
             b = sc.nextInt();
@@ -67,19 +71,19 @@ public class Main {
 
         sc.close();
     }
-}
 
-class Node implements Comparable<Node> {
-    int end;
-    int weight;
+    static class Node implements Comparable<Node> {
+        int end;
+        int weight;
 
-    public Node(int end, int weight) {
-        this.end = end;
-        this.weight = weight;
-    }
+        public Node(int end, int weight) {
+            this.end = end;
+            this.weight = weight;
+        }
 
-    @Override
-    public int compareTo(Node o) {
-        return weight - o.weight;
+        @Override
+        public int compareTo(Node o) {
+            return weight - o.weight;
+        }
     }
 }
