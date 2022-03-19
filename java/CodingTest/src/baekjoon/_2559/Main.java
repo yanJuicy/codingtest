@@ -13,7 +13,7 @@ public class Main {
     }
 
     private static void solve() {
-        int r = 0, sum = 0, res = 0;
+        int r = 0, sum = 0, res = Integer.MIN_VALUE;
         for (int l = 1; l <= n - k + 1; l++) {
             sum -= a[l - 1];
 
