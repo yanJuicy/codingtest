@@ -1,4 +1,4 @@
-package devcourse;
+package dc;
 
 import java.util.ArrayList;
 import java.util.Stack;
