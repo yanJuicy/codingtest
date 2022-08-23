@@ -14,8 +14,8 @@ public class Main {
 
 	private static void solve() {
 		int sum = 0;
-		for (int i = 0; i < s.length(); i++) {
-			sum += s.charAt(i) - '0';
+		for (char c : s.toCharArray()) {
+			sum += c - '0';
 		}
 		System.out.println(sum);
 	}
