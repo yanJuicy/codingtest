@@ -18,19 +18,17 @@ public class Main {
 
     private static void solve() {
         StringBuilder sb = new StringBuilder();
-
-        Deque<Integer> deque = new ArrayDeque<>();
+        Deque<Node> deque = new ArrayDeque<>();
 
         for (int i = 0; i < n; i++) {
-            if (!deque.isEmpty() && i % l == 0) {
-                deque.removeFirst();
-            }
-            while (!deque.isEmpty() && a[i] < deque.peekLast()) {
+            while (!deque.isEmpty() && a[i] < deque.peekLast().value) {
                 deque.removeLast();
             }
-            deque.add(a[i]);
-
-            sb.append(deque.peekFirst()).append(' ');
+            deque.add(new Node(i, a[i]));
+            if (deque.peekFirst().idx <= i - l) {
+                deque.removeFirst();
+            }
+            sb.append(deque.peekFirst().value).append(' ');
         }
 
         System.out.println(sb.toString());
@@ -49,6 +47,16 @@ public class Main {
 
         for (int i = 0; i < n; i++) {
             a[i] = Integer.parseInt(inputs[i]);
+        }
+    }
+
+    private static class Node {
+        int idx;
+        int value;
+
+        public Node(int idx, int value) {
+            this.idx = idx;
+            this.value = value;
         }
     }
 
