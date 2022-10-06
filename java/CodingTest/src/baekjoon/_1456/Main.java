@@ -31,7 +31,7 @@ public class Main {
                 long tmp = i;
 
                 while ((long) i <= b / tmp) {
-                    if ((long) i >= a / tmp) {
+                    if (i * tmp >= a) {
                         cnt++;
                     }
                     tmp *= i;
