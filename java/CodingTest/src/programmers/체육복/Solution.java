@@ -35,8 +35,4 @@ public class Solution {
 
         return answer;
     }
-
-    public static void main(String[] args) {
-        new Solution().solution(5, new int[] {2, 4}, new int[] {3});
-    }
 }
