@@ -2,7 +2,7 @@ package programmers.소수만들기;
 
 public class Solution {
 
-    static int result = 0;
+    private static int result = 0;
 
     public int solution(int[] nums) {
         int answer = 0;
