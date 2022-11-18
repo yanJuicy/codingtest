@@ -1,6 +1,6 @@
-package programmers.숫자문자열과영단어;
+package programmers.숫자_문자열과_영단어;
 
-public class Main {
+public class Solution {
 
     public int solution(String s) {
         String[] strs =
