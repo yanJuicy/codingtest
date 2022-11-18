@@ -4,14 +4,20 @@ public class Solution {
 
     public String solution(String s) {
         String[] words = s.split("");
-        String answer = "";
         int cnt = 0;
 
+        StringBuilder sb = new StringBuilder();
         for (String word : words) {
-            answer += cnt % 2 == 0 ? word.toUpperCase() : word.toLowerCase();
+            if (cnt % 2 == 0) {
+                sb.append(word.toUpperCase());
+            } else {
+                sb.append(word.toLowerCase());
+
+            }
             cnt = word.contains(" ") ? 0 : cnt + 1;
         }
 
+        String answer = sb.toString();
         return answer;
     }
 
