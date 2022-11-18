@@ -1,6 +1,6 @@
 package programmers.같은_숫자는_싫어;
 
-import java.util.*;
+import java.util.Stack;
 
 public class Solution {
     public int[] solution(int[] arr) {
