@@ -24,8 +24,8 @@ public class Solution {
                 continue;
             }
             if (c == '#') {
-                idx--;
-                counts[idx++] *= -1;
+                counts[--idx] *= -1;
+                idx++;
                 continue;
             }
             counts[idx] = num;
