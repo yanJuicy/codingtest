@@ -11,8 +11,7 @@ public class Solution {
                 sb.insert(0, '0');
             }
             String mapRow = sb.toString();
-            mapRow = mapRow.replaceAll("0", " ");
-            mapRow = mapRow.replaceAll("1", "#");
+            mapRow = mapRow.replaceAll("0", " ").replaceAll("1", "#");
             answer[i] = mapRow;
         }
 
