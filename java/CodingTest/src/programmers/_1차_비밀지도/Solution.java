@@ -10,8 +10,7 @@ public class Solution {
             while (sb.length() < n) {
                 sb.insert(0, '0');
             }
-            String mapRow = sb.toString();
-            mapRow = mapRow.replaceAll("0", " ").replaceAll("1", "#");
+            String mapRow = sb.toString().replaceAll("0", " ").replaceAll("1", "#");
             answer[i] = mapRow;
         }
 
