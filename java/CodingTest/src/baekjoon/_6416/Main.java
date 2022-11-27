@@ -1,8 +1,6 @@
 package baekjoon._6416;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -13,7 +11,7 @@ public class Main {
         StringBuilder sb = new StringBuilder();
 
         Set<Integer> destinations = new HashSet<>();
-        Map<Integer, Integer> edges = new HashMap<>();
+        Set<Integer> departures = new HashSet<>();
         boolean isTree = true;
         int k = 1;
 
@@ -26,13 +24,13 @@ public class Main {
             }
 
             if (u == 0 && v == 0) {
-                if (destinations.isEmpty()) {
+                if (departures.isEmpty()) {
                     sb.append("Case ").append(k++).append(" is a tree.\n");
                     continue;
                 }
 
                 int rootCnt = 0;
-                for (int vertex : edges.keySet()) {
+                for (int vertex : departures) {
                     if (!destinations.contains(vertex)) {
                         rootCnt++;
                     }
@@ -42,13 +40,14 @@ public class Main {
                     isTree = false;
                 }
 
+                sb.append("Case ").append(k++);
                 if (isTree) {
-                    sb.append("Case ").append(k++).append(" is a tree.\n");
+                    sb.append(" is a tree.\n");
                 } else {
-                    sb.append("Case ").append(k++).append(" is not a tree.\n");
+                    sb.append(" is not a tree.\n");
                 }
                 destinations.clear();
-                edges.clear();
+                departures.clear();
                 isTree = true;
                 continue;
             }
@@ -56,7 +55,7 @@ public class Main {
             if (!destinations.add(v)) {
                 isTree = false;
             }
-            edges.put(u, v);
+            departures.add(u);
         }
 
         System.out.println(sb.toString());
