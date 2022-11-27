@@ -26,6 +26,11 @@ public class Main {
             }
 
             if (u == 0 && v == 0) {
+                if (destinations.isEmpty()) {
+                    sb.append("Case ").append(k++).append(" is a tree.\n");
+                    continue;
+                }
+
                 int rootCnt = 0;
                 for (int vertex : edges.keySet()) {
                     if (!destinations.contains(vertex)) {
@@ -35,9 +40,6 @@ public class Main {
 
                 if (rootCnt != 1) {
                     isTree = false;
-                }
-                if (destinations.isEmpty()) {
-                    isTree = true;
                 }
 
                 if (isTree) {
