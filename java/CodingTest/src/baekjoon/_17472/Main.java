@@ -18,7 +18,8 @@ public class Main {
     private static ArrayList<int[]> pointList;
     private static ArrayList<ArrayList<int[]>> mapPointList;
     private static PriorityQueue<Node> edges;
-
+    private static int result = 0;
+    private static int edgeCount = 0;
 
     public static void main(String[] args) throws IOException {
         input();
@@ -37,20 +38,15 @@ public class Main {
             }
         }
 
-
         for (ArrayList<int[]> islandPoints : mapPointList) {
             for (int[] point : islandPoints) {
                 int curNum = map[point[0]][point[1]];
                 for (int k = 0; k < 4; k++) {
-                    int tx = dx[k];
-                    int ty = dy[k];
+                    int nx = point[0] + dx[k];
+                    int ny = point[1] + dy[k];
 
                     int length = 0;
-                    while (point[0] + tx >= 0 && point[0] + tx < n && point[1] + ty >= 0
-                            && point[1] + ty < m) {
-                        int nx = point[0] + tx;
-                        int ny = point[1] + ty;
-
+                    while (nx >= 0 && nx < n && ny >= 0 && ny < m) {
                         if (map[nx][ny] == curNum) {
                             break;
                         } else if (map[nx][ny] > 0) {
@@ -60,18 +56,23 @@ public class Main {
                             break;
                         }
 
-                        tx += dx[k];
-                        ty += dy[k];
+                        nx += dx[k];
+                        ny += dy[k];
                         length++;
                     }
                 }
             }
-
         }
 
-        int result = 0;
-        int edgeCount = 0;
+        kruskal(mapNum);
+        if (edgeCount == mapNum - 2) {
+            System.out.println(result);
+        } else {
+            System.out.println(-1);
+        }
+    }
 
+    private static void kruskal(int mapNum) {
         int[] p = new int[mapNum];
         for (int i = 1; i < mapNum; i++) {
             p[i] = i;
@@ -88,12 +89,6 @@ public class Main {
                 result += cur.v;
                 edgeCount++;
             }
-        }
-
-        if (edgeCount == mapNum - 2) {
-            System.out.println(result);
-        } else {
-            System.out.println(-1);
         }
     }
 
