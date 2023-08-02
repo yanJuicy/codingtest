@@ -1,16 +1,12 @@
+import sys
+input = sys.stdin.readline
+
 s = input()
 
-zero = 0
-one = 0
+cnt = [0, 0]
+cnt[ord(s[0]) - ord('0')] += 1
+for i in range(0, len(s.strip()) - 1):
+    if s[i] != s[i + 1]:
+        cnt[ord(s[i + 1]) - ord('0')] += 1
 
-state = s[0]
-if state == '0': zero += 1
-else: one += 1
-
-for i in s:
-    if i != state:
-        state = i
-        if state == '0': zero += 1
-        else: one += 1
-
-print(zero if zero < one else one)
+print(min(cnt))
