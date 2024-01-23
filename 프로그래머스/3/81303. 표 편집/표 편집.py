@@ -7,13 +7,11 @@ def solution(n, k, cmd):
     
     for udcz in cmd:
         if 'U' in udcz:
-            step = int(udcz[2:])
-            for _ in range(step):
+            for _ in range(int(udcz[2:])):
                 k = up[k]
 
         if 'D' in udcz:
-            step = int(udcz[2:])
-            for _ in range(step):
+            for _ in range(int(udcz[2:])):
                 k = down[k]
         
         if 'C' == udcz:
