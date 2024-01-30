@@ -1,13 +1,8 @@
 from collections import deque
+import math
 
 def solution(progresses, speeds):
-    q = deque()
-    
-    for i in range(len(progresses)):
-        remain = (100 - progresses[i]) // speeds[i]
-        if (100 - progresses[i]) % speeds[i] != 0:
-            remain += 1
-        q.append(remain)
+    q = deque([math.ceil((100 - progresses[i]) / speeds[i]) for i in range(len(progresses))])
         
     answer = []
     
