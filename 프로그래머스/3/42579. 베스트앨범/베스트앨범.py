@@ -9,7 +9,6 @@ def solution(genres, plays):
         genres_song[genres[i]].append((plays[i], i))
         genres_play[genres[i]] += plays[i]
         
-
     genres_play = sorted(genres_play.items(), key=lambda x:x[1], reverse=True)
 
     answer = []
