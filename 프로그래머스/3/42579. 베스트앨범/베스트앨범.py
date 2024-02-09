@@ -10,7 +10,7 @@ def solution(genres, plays):
         genres_play[genres[i]] += plays[i]
         
 
-    genres_play = sorted(genres_play.items(), key=lambda x: x[1], reverse=True)
+    genres_play = sorted(genres_play.items(), key=lambda x:x[1], reverse=True)
 
     answer = []
     for genre, _ in genres_play:
