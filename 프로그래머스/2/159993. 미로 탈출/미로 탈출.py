@@ -1,6 +1,5 @@
 def bfs(row, col, visit, max_row, max_col, maps):
-    visit_L = False
-    
+    visit_L = False    
     q = []
     visit[row][col] = True
     q.append([row, col, 0])
@@ -13,9 +12,9 @@ def bfs(row, col, visit, max_row, max_col, maps):
 
         if maps[cur_row][cur_col] == "L":
             visit_L = True
+            q = []
             visit = [[False for _ in range(len(maps[0]))] for _ in range(len(maps))]
             visit[cur_row][cur_col] = True
-            q = []
 
         for d in range(4):
             d_row = [1, -1, 0, 0]
@@ -29,15 +28,12 @@ def bfs(row, col, visit, max_row, max_col, maps):
             if maps[next_row][next_col] != "X" and not visit[next_row][next_col] :
                 q.append([next_row, next_col, step + 1])
                 visit[next_row][next_col] = True
-        
-        step += 1
     
     return -1
     
 
 def solution(maps):
     visit = [[False for _ in range(len(maps[0]))] for _ in range(len(maps))]
-    
     for i in range(len(maps)):
         for j in range(len(maps[i])):
             if maps[i][j] == "S":
