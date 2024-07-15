@@ -5,16 +5,13 @@ sum = 0
 
 for i in range(len(brackets)):
     if brackets[i] == '(':
-        stack.append((brackets[i], i))
+        stack.append(brackets[i])
     else:
-        last_idx = stack[-1][1]
-        last_bracket = stack[-1][0]
-
-        stack.pop(-1)
-
-        if last_idx + 1 == i:
-            sum += len(stack)
+        if brackets[i - 1] == '(':
+            sum += len(stack) - 1
         else:
             sum += 1
+
+        stack.pop(-1)
 
 print(sum)
