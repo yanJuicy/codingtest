@@ -1,25 +1,18 @@
-def clothes_count(d):
-    n = len(d)
-    if n == 0:
-        return 0
+t = int(input())
+
+for _ in range(t):
+    n = int(input())
+    d = {}
+    for _ in range(n):
+        clothes, category = input().split()
+        if category not in d:
+            d[category] = 1
+        else:
+            d[category] += 1
+
     result = 1
     for key in d.keys():
         result *= (d[key] + 1)
-    return result - 1
+    result -= 1
 
-test_case = int(input())
-while test_case:
-    n = int(input())
-    clothes = set()
-    kind = dict()
-    for j in range(n):
-        wear = input()
-        a, b = wear.split()
-        if b not in clothes:
-            clothes.add(b)
-            kind[b] = 1
-        else:
-            kind[b] += 1
-    result = clothes_count(kind)
     print(result)
-    test_case -= 1
