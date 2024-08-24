@@ -6,13 +6,13 @@ n, m = map(int, input().split())
 for _ in range(n):
     board.append(input())
 
-for c in range(n - 7):
-    for r in range(m - 7):
+for r in range(n - 7):
+    for c in range(m - 7):
         case_1 = 0  # WB
         case_2 = 0  # BW
 
-        for i in range(c, c + 8):
-            for j in range(r, r + 8):
+        for i in range(r, r + 8):
+            for j in range(c, c + 8):
                 if (i + j) % 2 == 0:
                     if board[i][j] == "B":  # WB
                         case_1 += 1
