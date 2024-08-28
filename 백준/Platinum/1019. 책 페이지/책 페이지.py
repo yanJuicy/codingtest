@@ -1,9 +1,9 @@
-n = int(input())
-
 answer = [0] * 10
 rest_add_nums = 0
 rest_add_num_zero = 1
 digit = 1
+
+n = int(input())
 
 while n > 0:
     cur = n % 10
