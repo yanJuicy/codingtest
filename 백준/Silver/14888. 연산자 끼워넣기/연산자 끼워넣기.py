@@ -34,8 +34,8 @@ def backtracking(index, sum):
 n = int(input())
 numArr = list(map(int, input().split()))
 operator = list(map(int, input().split()))
-minAns = float('Inf')
-maxAns = float('-Inf')
+minAns = 1000000001
+maxAns = -1000000001
 
 backtracking(0, numArr[0])
 print(maxAns)
