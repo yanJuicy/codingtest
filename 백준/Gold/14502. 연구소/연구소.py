@@ -10,7 +10,6 @@ def bfs():
 
     for i in range(n):
         for j in range(m):
-            bfs_visited[i][j] = lab[i][j]
             if lab[i][j] == 2:
                 q.append([i, j])
                 bfs_visited[i][j] = 1
