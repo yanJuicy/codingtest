@@ -16,15 +16,14 @@ def bfs():
 
     while q:
         r, c = q.popleft()
-
         for d in range(4):
             next_r = r + dy[d]
             next_c = c + dx[d]
             if (
                 0 <= next_r < n
                 and 0 <= next_c < m
-                and not lab[next_r][next_c]
-                and not bfs_visited[next_r][next_c]
+                and lab[next_r][next_c] == 0
+                and bfs_visited[next_r][next_c] == 0
             ):
                 q.append([next_r, next_c])
                 bfs_visited[next_r][next_c] = 1
@@ -32,7 +31,7 @@ def bfs():
     cnt = 0
     for i in range(n):
         for j in range(m):
-            if not lab[i][j] and not bfs_visited[i][j]:
+            if lab[i][j] == 0 and bfs_visited[i][j] == 0:
                 cnt += 1
 
     answer = max(answer, cnt)
@@ -45,7 +44,7 @@ def backtracking(wall_count):
 
     for i in range(n):
         for j in range(m):
-            if not lab[i][j] and not backtracking_visited[i][j]:
+            if lab[i][j] == 0 and backtracking_visited[i][j] == 0:
                 backtracking_visited[i][j] = 1
                 lab[i][j] = 1
                 backtracking(wall_count + 1)
