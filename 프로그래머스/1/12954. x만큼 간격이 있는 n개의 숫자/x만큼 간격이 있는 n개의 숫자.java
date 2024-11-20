@@ -3,19 +3,11 @@ import java.util.ArrayList;
 
 class Solution {
     public long[] solution(int x, int n) {
-        List<Long> list = new ArrayList<>() {
-            {
-                long num = x;
-                for (int i = 0; i < n; i++) {
-                    add(num);
-                    num += x;
-                }
-            }    
-        };
+        long[] answer = new long[n];
+        answer[0] = x;
         
-        long[] answer = new long[list.size()];
-        for (int i = 0; i < answer.length; i++) {
-            answer[i] = list.get(i);
+        for (int i = 1; i < n; i++) {
+            answer[i] = x + answer[i - 1];
         }
         
         return answer;
